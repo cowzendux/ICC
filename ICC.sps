@@ -17,11 +17,13 @@
     Used SPSS tables for output
 * 2014-11-14a Put statistics in columns
 * 2014-11-14b Allowed multiple outcomes
+* 2014-11-19 Corrected error from failing to import CellText
 
 set printback = off.
 
 begin program python.
 import spss, spssaux
+from spss import CellText
 
 def ICC(outcomeList, cluster):
    submitstring = """OMS /SELECT ALL EXCEPT = [WARNINGS] 
